@@ -23,7 +23,6 @@ def add_sample_data(request):
 
 @api_view(['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'TRACE', 'TRACK', 'TestMethod'])
 def fetch_sample_data(request):
-
     url = request.path
     print(url)
     try:
