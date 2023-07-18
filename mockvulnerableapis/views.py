@@ -1,9 +1,13 @@
 from django.shortcuts import render
 import json
+import os
+import copy
+
 
 from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from .models import SampleData
+from types import SimpleNamespace
 
 
 @api_view(['POST'])
@@ -29,10 +33,10 @@ def fetch_sample_data(request):
         sample_data = SampleData.objects.get(url=url)
         print("sample_data_url")
         print(sample_data.url)
-        sample_data = json.loads(sample_data.data)
-        resp = sample_data["responsePayload"]
-        status_code = sample_data["statusCode"]
-        headers = sample_data["responseHeaders"]
+        sample_data_json = json.loads(sample_data.data)
+        resp = sample_data_json["responsePayload"]
+        status_code = sample_data_json["statusCode"]
+        headers = sample_data_json["responseHeaders"]
 
         api_resp = HttpResponse(json.dumps(resp), status=status_code)
 
@@ -42,3 +46,43 @@ def fetch_sample_data(request):
         return api_resp
     except Exception as e:
         return HttpResponse("Error Executing Request".format(e), status=500)
+
+
+@api_view(['POST'])
+def insert_data(request):
+    cur_dir = os.path.dirname(os.path.abspath(__file__))
+    path = cur_dir + "/sampleapidata.json"
+    f = open(path, "r")
+    data = f.read()
+    testData = json.loads(data, object_hook=lambda d: SimpleNamespace(**d))
+
+    for obj in testData:
+        try:
+            resp = obj.testData.responsePayload
+            headers = obj.testData.responseHeaders
+            try:
+                resp = vars(obj.testData.responsePayload)
+            except Exception as e:
+                print("error loading responsePayload " + obj.id + " " + str(e))
+            try:
+                headers = vars(obj.testData.responseHeaders)
+            except Exception as e:
+                print("error loading responseHeaders " + obj.id + " " + str(e))
+
+            data = {
+                "method": obj.testData.method,
+                "responsePayload": resp,
+                "statusCode": obj.testData.statusCode,
+                "responseHeaders": headers
+            }
+
+            url = obj.testData.url
+            if SampleData.objects.filter(url=url).exists():
+                SampleData.objects.filter(url=url).update(data=json.dumps(data))
+            else:
+                SampleData.objects.create(url=url, data=json.dumps(data))
+
+        except Exception as e:
+            print("error inserting data " + obj.id + " " + str(e))
+
+    return HttpResponse(json.dumps(request.data), status=200)
