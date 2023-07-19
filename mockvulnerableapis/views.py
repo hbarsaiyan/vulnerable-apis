@@ -63,7 +63,10 @@ def insert_data(request):
             try:
                 resp = vars(obj.testData.responsePayload)
                 for key in resp:
-                    resp[key] = vars(resp[key])
+                    try:
+                        resp[key] = vars(resp[key])
+                    except Exception as e:
+                        pass
             except Exception as e:
                 print("error loading responsePayload " + obj.id + " " + str(e))
             try:
