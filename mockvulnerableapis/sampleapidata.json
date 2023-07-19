@@ -281,7 +281,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "api/college/employee/config.json",
+            "url": "/api/college/employee/config.json",
             "responsePayload": {
                 "api_keys": "guebebeuybhjjjkkkshcbb",
                 "server": "notebook.com"
@@ -807,7 +807,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/clubs/sds/api/components/suggestions?recentlyBrowsed=",
+            "url": "/api/college/clubs/sds/api/components/suggestions",
             "responsePayload": "{\"results\":{\"items\":[1,2,3],\"more\":true}}",
             "responseHeaders": {},
             "statusCode": 200
@@ -969,7 +969,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/society/debate",
+            "url": "/api/college/society/debate/\"></script><script>alert(document.domain)</script>",
             "responsePayload": "<!DOCTYPE html> <html> <head> </head> <body> <h1>Hello, API user!</h1> <p>Welcome to debate society. Play is <script>alert(document.domain)</script></p> </body> </html>",
             "responseHeaders": {},
             "statusCode": 200
@@ -1209,7 +1209,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/exams/it/has%20been%20changed%20to%20https%3A%2F%2Fwww.fakewebsite.com.%20so%20please%20visit%20https%3A%2F%2Fwww.fakewebsite.com%20as%20your%20requested%20link",
+            "url": "/api/college/exams/it/has been changed to https://www.fakewebsite.com. so please visit https://www.fakewebsite.com as your requested link",
             "responsePayload": "Page not found. The page has been changed to https://www.fakewebsite.com. so please visit https://www.fakewebsite.com as your requested link",
             "responseHeaders": {},
             "statusCode": 200
@@ -1260,7 +1260,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/user/results/view/sem4?user=3245",
+            "url": "/api/college/user/results/view/sem4",
             "responsePayload": {
                 "user_id": 3245,
                 "name": "user21",
@@ -1293,7 +1293,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/users/profile?private_var=101",
+            "url": "/api/college/users/profile",
             "responsePayload": {
                 "private_var": 101,
                 "name": "admin-1",
@@ -1433,7 +1433,7 @@
         },
         "testData": {
             "method": "POST",
-            "url": "/api/college/sem1/enroll-course?csrf=NRZ1M9Q4Yotd-mV7MyzwQNiiMCDLjd-RRLUWzV4A",
+            "url": "/api/college/sem1/enroll-course",
             "responsePayload": {
                 "message": "Course enrollment successful"
             },
@@ -1477,7 +1477,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/info/deptartments/hod?limit=10",
+            "url": "/api/college/info/deptartments/hod",
             "responsePayload": {
                 "CSE": "PROF-404",
                 "ECE": "PROF-414",
@@ -1508,7 +1508,7 @@
         },
         "testData": {
             "method": "PATCH",
-            "url": "/api/college/student/profile?account=98765432",
+            "url": "/api/college/student/profile",
             "responsePayload": {
                 "message": "Profile updated successfully",
                 "account": "98765432"
@@ -1531,7 +1531,7 @@
         },
         "testData": {
             "method": "POST",
-            "url": "/api/college/user?role=admin",
+            "url": "/api/college/user",
             "responsePayload": {
                 "message": "User created successfully",
                 "role": "admin"
@@ -1600,7 +1600,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "api/college/redirect?url=https://evil.com/?p=https://college.com",
+            "url": "/api/college/redirect",
             "responsePayload": {
                 "message": "Welcome to the Evil home page"
             },
@@ -1718,7 +1718,7 @@
         },
         "testData": {
             "method": "POST",
-            "url": "/api/college/upload-file?file=testInvalidFile",
+            "url": "/api/college/upload-file",
             "responsePayload": {
                 "status": 404,
                 "message": "Access denied",
@@ -2000,7 +2000,7 @@
         },
         "testData": {
             "method": "POST",
-            "url": "api/college/prof/upload-marks?file=https://ssrf.localdomain.pw/csv-without-body/301-http-169.254.169.254:80-.c.csv",
+            "url": "/api/college/prof/upload-marks",
             "responsePayload": {
                 "ami-id": "ami-871423645",
                 "ami-launch-index": 3
@@ -2023,7 +2023,7 @@
         },
         "testData": {
             "method": "POST",
-            "url": "api/college/dashboard/upload-profilePic?imageFile=https://ssrf.localdomain.pw/img-without-body/301-http-169.254.169.254:80-.i.jpg",
+            "url": "/api/college/dashboard/upload-profilePic",
             "responsePayload": {
                 "ami-id": "ami-236871445",
                 "ami-launch-index": 2
@@ -2046,7 +2046,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "api/college/dept/chemical/resources/books?book=https://ssrf.localdomain.pw/pdf-without-body/301-http-169.254.169.254:80-.p.pdf",
+            "url": "/api/college/dept/chemical/resources/books",
             "responsePayload": {
                 "ami-id": "ami-287144365",
                 "ami-launch-index": 1
@@ -2069,7 +2069,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/library/homepage?redirect=http://make-127-0-0-1-rr.1u.ms/admin",
+            "url": "/api/college/library/homepage",
             "responsePayload": {
                 "role": "admin",
                 "message": "Welcome Admin",
@@ -2094,7 +2094,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/library/depart/cse?redirect=http://localhost/admin",
+            "url": "/api/college/library/depart/cse",
             "responsePayload": {
                 "role": "admin",
                 "message": "Welcome HOD of CSE Department",
@@ -2119,7 +2119,7 @@
         },
         "testData": {
             "method": "POST",
-            "url": "api/college/depart/mech/prof/upload-data?file=https://ssrf.localdomain.pw/xml-without-body-md/301-http-.x.xml",
+            "url": "/api/college/depart/mech/prof/upload-data",
             "responsePayload": {
                 "ami-id": "ami-234456871",
                 "ami-launch-index": 7
@@ -2142,7 +2142,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/library/depart/books/eee?redirect=http://①②⑦。⓪⓪⓪。⓪⓪①/admin",
+            "url": "/api/college/library/depart/books/eee",
             "responsePayload": {
                 "role": "admin",
                 "message": "Welcome HOD of EEE Department",
@@ -2167,7 +2167,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/library/depart/books/chem?redirect=http://169.254.169.254/latest/meta-data/local-ipv4",
+            "url": "/api/college/library/depart/books/chem",
             "responsePayload": {
                 "ami-id": "ami-287144365",
                 "ami-launch-index": 1
@@ -2190,7 +2190,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "api/college/dept/mech/resources/books-and-journals?file=///etc/passwd",
+            "url": "/api/college/dept/mech/resources/books-and-journals",
             "responsePayload": "root:x:0:0:root:/root:/bin/bash",
             "responseHeaders": {},
             "statusCode": 200
@@ -2210,7 +2210,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/library/depart/journals/mech?redirect=http://⑯⑨。②⑤④。⑯⑨｡②⑤④/latest/meta-data/local-ipv4",
+            "url": "/api/college/library/depart/journals/mech",
             "responsePayload": {
                 "ami-id": "ami-234468711",
                 "ami-launch-index": 4
@@ -2598,7 +2598,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "api/college/info/depart/branch/actuator/httptrace",
+            "url": "/api/college/info/depart/branch/actuator/httptrace",
             "responsePayload": {
                 "traces": [
                     {
@@ -2658,7 +2658,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/info/student-101?debug=xml",
+            "url": "/api/college/info/student-101",
             "responsePayload": "<debug><message>Error occurred in processing request</message><struts.actionMapping>Action Mapping: com.example.StudentAction</struts.actionMapping><stackTrace>at com.example.StudentAction.execute(StudentAction.java:123)\nat org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)</stackTrace></debug>",
             "responseHeaders": {
                 "Content-Type": "application/xml"
@@ -2680,7 +2680,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "api/college/info/department/branch/struts/webconsole.html?debug=console",
+            "url": "/api/college/info/department/branch/struts/webconsole.html",
             "responsePayload": "<html>\n<head>\n  <title>Struts OGNL Console</title>\n</head>\n<body>\n  <h1>Welcome to the OGNL console!</h1>\n</body>\n</html>",
             "responseHeaders": {
                 "Content-Type": "text/html"
