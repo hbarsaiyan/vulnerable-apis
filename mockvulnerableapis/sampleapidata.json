@@ -260,8 +260,8 @@
             "method": "GET",
             "url": "/api/college/about-us/.circleci/config.yml",
             "responsePayload": {
-                "version:": "5.1.5",
-                "jobs:": "job1.. job2 .. job 3"
+                "version": "5.1.5",
+                "jobs": "job1.. job2 .. job 3"
             },
             "responseHeaders": {},
             "statusCode": 200
@@ -348,7 +348,7 @@
         "testData": {
             "method": "GET",
             "url": "/api/college/employee/asso-professors/debug/vars",
-            "responsePayload": "{\"memstats\": {\"total\": 1024,\"used\": 512},\"cmdline\": \"/path/to/executable\"}",
+            "responsePayload": {"memstats": {"total": 1024,"used": 512},"cmdline": "/path/to/executable"},
             "responseHeaders": {},
             "statusCode": 200
         }
@@ -436,7 +436,7 @@
         "testData": {
             "method": "GET",
             "url": "/api/college/cs-dept/public/config.js",
-            "responsePayload": "{\"apiKey\": \"YOUR_API_KEY\",\"authDomain\": \"your-domain.firebaseapp.com\",\"databaseURL\": \"https://your-domain.firebaseio.com\",\"storageBucket\": \"your-domain.appspot.com\"}",
+            "responsePayload": {"apiKey": "YOUR_API_KEY","authDomain": "your-domain.firebaseapp.com","databaseURL": "https://your-domain.firebaseio.com","storageBucket": "your-domain.appspot.com"},
             "responseHeaders": {},
             "statusCode": 200
         }
@@ -808,7 +808,7 @@
         "testData": {
             "method": "GET",
             "url": "/api/college/clubs/sds/api/components/suggestions",
-            "responsePayload": "{\"results\":{\"items\":[1,2,3],\"more\":true}}",
+            "responsePayload": { "results": {"items":[1,2,3],"more":true}},
             "responseHeaders": {},
             "statusCode": 200
         }
