@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   vulservice:
-    build: .
+    image: ayush12493/vulnerable-apis:latest
     ports:
       - "8000:8000"
     command: python manage.py runserver 0.0.0.0:8000
@@ -14,7 +14,6 @@ services:
   db:
     container_name: postgres-container
     image: postgres:latest
-    user: postgres
     restart: always
     volumes:
       - ./data/db:/var/lib/postgresql/data/
