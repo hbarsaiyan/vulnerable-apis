@@ -48,6 +48,10 @@ def fetch_sample_data(request):
         return HttpResponse("Error Executing Request".format(e), status=500)
 
 
+@api_view(['GET'])
+def metrics(request):
+    return HttpResponse(json.dumps("{}"), status=200)
+
 @api_view(['POST'])
 def insert_data(request):
     cur_dir = os.path.dirname(os.path.abspath(__file__))
