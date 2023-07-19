@@ -10,9 +10,11 @@ services:
         condition: service_healthy
     environment:
       WAIT_HOSTS: db:5432
+    restart: always
   db:
     container_name: postgres-container
     image: postgres:latest
+    user: postgres
     restart: always
     volumes:
       - ./data/db:/var/lib/postgresql/data/
