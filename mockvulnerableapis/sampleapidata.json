@@ -2001,7 +2001,7 @@
         },
         "testData": {
             "method": "POST",
-            "url": "/api/college/dashboard/upload-profilePic?imageFile=https://ssrf.localdomain.pw/img-without-body/301-http-169.254.169.254:80-.i.jpg",
+            "url": "/api/college/dashboard/upload-profilePic",
             "responsePayload": {
                 "ami-id": "ami-236871445",
                 "ami-launch-index": 2
