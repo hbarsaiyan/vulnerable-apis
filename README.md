@@ -9,7 +9,7 @@ Library of sample vulnerable APIs
 4. Run migrate ```python3 manage.py migrate```
 5. Start API server
    ```python3 manage.py runserver 0.0.0.0:80```
-6. Insert data in db
+6. Insert data in db. You have to run this command each time you change **sampleapidata.json**
    ```curl --location --request POST 'http://127.0.0.1:80/api/insert_data/'```
 7. Verify by going to [http://localhost/api/college/network-info](http://localhost/api/college/network-info)
 
