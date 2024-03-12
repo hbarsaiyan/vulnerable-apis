@@ -1518,7 +1518,7 @@
         "sampleData": {
             "method": "POST",
             "requestPayload": "{\"CRL\": \"12000\", \"appNo\": \"123879\", \"name\":\"stud1209\", \"branch\":\"eee\"}",
-            "responsePayload": "{\"messgae\": \"Registration Successful\"}",
+            "responsePayload": "{\"message\": \"Registration Successful\"}",
             "requestHeaders": "{\"Authorization\":\"JWT eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJBa3RvIiwic3ViIjoibG9naW4iLCJzaWduZWRVcCI6InRydWUiLCJ1c2VybmFtZSI6InJpc2hhdi5zb2xhbmtpQGFrdG8uaW8iLCJpYXQiOjE2ODg3MTMzNTUsImV4cCI6MTY4ODcxNDI1NX0.ToSrgQdEWaTVBphY9QMPBmo1zWgaDt_2zRlFb4gLYcgn3x58ClnTciRXN--9 LeoKojWo466S2rDDK8KH3IhR7gTDKk9ihKfLaVoKIg7M7RaHxFgp - vtjWenFcR6IBqLXqYh_kCqBFDH3hjrbD1Qtoaieu_L1rtJFwqz2xoIZP0VEmTPXT4vxT6yoVlbgloROzu1cJFGnoFQm69OUNHpCLf9S_7Qs - 9 eV2V - AlzeClfMnblTqhQP_s4znPit2Ik0ypNIH - mEwgxL - coWVmphuFYy5uG5c2Z4F4te7r_QP9jlOVYFjwB6_9gQSwi1lrm8qKdNml1UKnh4NNizc1878oQ\", \"Content-Type\": \"application/json\", \"Content-Length\": \"2\"}",
             "responseHeaders": "{\"Content-Type\": \"application/json\"}",
             "status": "OK",
@@ -1529,8 +1529,8 @@
             "method": "POST",
             "url": "/api/college/registrations",
             "responsePayload": {
-                "errors": "Validation failed",
-                "stack-trace": "At row 1 col 1 expected a valid input, function exited with returning 0"
+                "error": "Validation failed",
+                "stack-trace": "java.lang.IllegalArgumentException"
             },
             "responseHeaders": {
                 "Content-Type": "application/json"
@@ -1863,7 +1863,7 @@
         },
         "testData": {
             "method": "GET",
-            "url": "/api/college/library/depart/cse?redirect=http://localhost/admin",
+            "url": "/api/college/library/depart/cse",
             "responsePayload": {
                 "role": "admin",
                 "message": "Welcome HOD of CSE Department",
@@ -2461,7 +2461,7 @@
         "testData": {
             "method": "GET",
             "url": "/api/college/network-info",
-            "responsePayload": "Sensitive Info ....",
+            "responsePayload": "Ubuntu",
             "responseHeaders": {},
             "statusCode": 200
         }
