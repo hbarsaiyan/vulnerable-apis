@@ -1,7 +1,7 @@
 from functools import wraps
 from django.http import HttpResponse
 
-def authentication_token_required(view_function):
+def authorization_check(view_function):
     @wraps(view_function)
     def wrap(request, *args, **kwargs):
         # exempt these paths from auth check
