@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .decorator import authentication_token_required
 import json
 import os
 import copy
@@ -26,6 +27,7 @@ def add_sample_data(request):
 
 
 @api_view(['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'TRACE', 'TRACK', 'TestMethod'])
+@authentication_token_required
 def fetch_sample_data(request):
     url = request.path
     print(url)
