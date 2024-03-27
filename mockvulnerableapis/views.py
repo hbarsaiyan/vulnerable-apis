@@ -1,6 +1,7 @@
 from django.shortcuts import render
-import asyncio
+from .decorator import authorization_check
 from asgiref.sync import async_to_sync
+import asyncio
 import json
 import os
 import copy
@@ -29,6 +30,7 @@ async def resp_delay(api_resp, delay=0):
     return api_resp
 
 @api_view(['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'TRACE', 'TRACK', 'TestMethod'])
+@authorization_check
 def fetch_sample_data(request):
     url = request.path
     node_id = request.headers.get('x-akto-node', "x1")
