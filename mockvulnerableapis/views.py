@@ -49,7 +49,9 @@ def fetch_sample_data(request):
 
         for key, value in headers.items():
             api_resp[key] = value
-
+        # If the test is 'CONTENT_TYPE_HEADER_MISSING', remove the 'Content-Type' header
+        if url == '/api/college/course-list':
+            del api_resp['Content-Type']
         return resp_delay(api_resp, median_response_time/1000)
     except Exception as e:
         return HttpResponse("Error Executing Request".format(e), status=500)
