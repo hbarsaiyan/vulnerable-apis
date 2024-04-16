@@ -1,7 +1,7 @@
 version: '3'
 services:
   vulservice:
-    image: ayush12493/vulnerable-apis:latest
+    image: hbarsaiyan/vulnerable-apis:latest
     ports:
       - "80:8000"
     command: python manage.py runserver 0.0.0.0:8000
